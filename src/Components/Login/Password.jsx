@@ -1,6 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 function Password() {
   const [Email, setEmail] = useState("");
   const [Phone, setPhone] = useState("");
@@ -44,7 +46,9 @@ function Password() {
       console.log(result);
       localStorage.removeItem("id");
       setPassError(false);
-      alert("Password Changed Succesfully");
+     toast.success('Password changed successfully',{
+      position:toast.POSITION.TOP_CENTER,autoClose:2000
+     })
       navigate("/login");
     } else setPassError(true);
   };
@@ -115,6 +119,7 @@ function Password() {
           Submit
         </button>
       )}
+      <ToastContainer/>
     </div>
   );
 }

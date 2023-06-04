@@ -7,7 +7,7 @@ function Login() {
   const [Error, setError] = useState(false);
   const navigate = useNavigate();
   const collectData = async () => {
-    let result = await fetch("http://localhost:3001/login", {
+    let result = await fetch("https://futureik.onrender.com/login", {
       method: "post",
       body: JSON.stringify({ Email, Password }),
       headers: {

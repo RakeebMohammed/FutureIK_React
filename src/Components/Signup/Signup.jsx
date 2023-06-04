@@ -12,7 +12,7 @@ function Signup() {
   const navigate = useNavigate();
 
   const collectData = async () => {
-    let result = await fetch("http://localhost:3001/register", {
+    let result = await fetch("https://futureik.onrender.com/register", {
       method: "post",
       body: JSON.stringify({ Name, Email, Password, Cpassword, Phone }),
       headers: {

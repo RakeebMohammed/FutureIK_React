@@ -24,8 +24,8 @@ function Login() {
     } else setError(true);
   };
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-500">
-      <h3 className="text-6xl underline text-white p-2 text-center">Login</h3>
+    <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-100">
+      <h3 className="text-3xl  text-blue-950 p-2 text-center">Login</h3>
       <input
         className="p-4 border-2 m-2"
         value={Email}
@@ -48,10 +48,10 @@ function Login() {
       >
         Login
       </button>
-      <button>
+      <button className="text-black">
         <Link to="/forgotPassword"> Forgot Password ?</Link>
       </button>
-      <p>Dont have an Account ? <Link tp='/signup'>Signup</Link></p>
+      <p  className="text-black">Dont have an Account ? <Link to='/signup'>Signup</Link></p>
     </div>
   );
 }

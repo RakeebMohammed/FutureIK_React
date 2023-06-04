@@ -50,9 +50,9 @@ function Password() {
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-500">
+    <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-100">
       {!Update && (
-        <h3 className="text-6xl flex justify-center items-start text-white p-2 text-center">
+        <h3 className="text-3xl flex justify-center items-start text-black p-2 text-center">
           Forgot Password{" "}
         </h3>
       )}
@@ -77,7 +77,7 @@ function Password() {
       {Error && <span className="text-red-600">Enter valid credintials</span>}
       {!Update && (
         <button
-          className="bg-white hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
+          className="bg-white text-blue-400 hover:bg-blue-400 hover:text-black border-2 rounded-full p-2 m-2"
           onClick={collectData}
           type="submit"
         >
@@ -85,7 +85,7 @@ function Password() {
         </button>
       )}
       {Update && (
-        <h3 className="text-6xl text-white p-2 text-center">Reset Password </h3>
+        <h3 className="text-6xl  text-black p-2 text-center">Reset Password </h3>
       )}
       {Update && (
         <input
@@ -108,7 +108,7 @@ function Password() {
       {PassError && <span className="text-red-600">Password doesnt match</span>}
       {Update && (
         <button
-          className="bg-white hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
+          className="bg-white  text-blue-400 hover:bg-blue-400 hover:text-black border-2 rounded-full p-2 m-2"
           onClick={UpdatePass}
           type="submit"
         >

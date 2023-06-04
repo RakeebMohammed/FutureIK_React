@@ -26,8 +26,8 @@ function Signup() {
     } else setError(true);
   };
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center  bg-slate-500 ">
-      <h1 className="text-center text-green-500 text-6xl underline pb-2">
+    <div className="w-screen h-screen flex flex-col justify-center items-center  bg-slate-100 ">
+      <h1 className="text-center text-blue-950 text-6xl  pb-2">
         Register
       </h1>
       <input
@@ -68,13 +68,13 @@ function Signup() {
       />
       {Error && <span>Enter valid credintials</span>}
       <button
-        className="bg-white px-5 hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
+        className="bg-white text-black px-5 hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
         onClick={collectData}
         type="submit"
       >
         Signup
       </button>
-      Already have an account ? <Link to='/login'>Login</Link>
+    <p className="text-black">   Already have an account ? <Link to='/login'>Login</Link></p>
     </div>
   );
 }

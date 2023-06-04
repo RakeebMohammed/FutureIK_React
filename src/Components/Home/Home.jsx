@@ -9,7 +9,7 @@ import Header from "./Header";
 import Project from "./Project";
 import SideBar from "./SideBar";
 import { TbHeadset } from "react-icons/tb";
-
+import "./Home.css";
 function Home() {
   const navigate = useNavigate();
   useEffect(() => {
@@ -19,7 +19,7 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex relative bg-slate-100 ">
+    <div className="flex relative  White_bg">
       <div className="absolute bottom-5 right-4 text-3xl rounded-full p-3 bg-blue-900 text-white">
         <TbHeadset />
       </div>

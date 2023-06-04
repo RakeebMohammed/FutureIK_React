@@ -5,7 +5,7 @@ function Device() {
   return (
     <div className="flex mx-8 pb-3">
       <div className="w-2/6 my-2 bg-white py-4 border-2">
-        <h2 className="ml-6 mb-4 ">Device Status</h2>
+        <h2 className="ml-6 mb-4 font-medium">Device Status</h2>
         <div className="flex flex-row justify-around text-xs text-gray-500">
           <ul>
             <li className="">Device Name</li>
@@ -48,7 +48,7 @@ function Device() {
         </div>
       </div>
       <div className="w-2/6 my-2 bg-white pt-4 border-2">
-        <h2 className="ml-8">Activity Logs</h2>
+        <h2 className="ml-8 font-medium">Activity Logs</h2>
         <div className="flex justify-evenly py-2 border-b-2 mx-3 text-gray-400">
           <div className="flex flex-col">
             <h2 className="text-md ml-4">Device</h2>
@@ -83,11 +83,13 @@ function Device() {
         </div>
       </div>
       <div className="w-2/6 my-2  bg-white py-4 border-2">
-        <h2 className="ml-8">Domain Quota</h2>
+        <h2 className="ml-8 font-medium">Domain Quota</h2>
         <div className="flex ">
-          <div className="flex h-40 justify-start items-center">
-            <div className="w-24 ">
+          <div className="flex h-40 justify-start items-center ">
+            <div className="w-24 flex relative">
               <Usage />
+              <p className="absolute ml-8 mt-10 text-sm text-gray-400">60.33</p>
+            
             </div>
 
             <div>

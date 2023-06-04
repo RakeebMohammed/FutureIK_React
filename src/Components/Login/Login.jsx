@@ -1,17 +1,32 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 function Login() {
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
   const [Error, setError] = useState(false);
   const navigate = useNavigate();
+  useEffect(() => {
+   let Id=localStorage.getItem('id')
+   const user = localStorage.getItem("user");
+   if (user) navigate("/");
+   else navigate("/login");
+   if(Id){
+    localStorage.removeItem("id")
+    toast.success('Password changed successfully',{
+    position:toast.POSITION.TOP_CENTER,autoClose:1000
+   })}
+   
+  }, [])
+  
   const collectData = async () => {
    if(!Email || !Password){
-    setError(true)
+    setError('Please input all fields')
     return false
    }
-    let result = await fetch("https://futureik.onrender.com/login", {
+    let result = await fetch("http://localhost:3001/login", {
       method: "post",
       body: JSON.stringify({ Email, Password }),
       headers: {
@@ -25,7 +40,9 @@ function Login() {
       localStorage.setItem("user", JSON.stringify(result.id));
 
       navigate("/");
-    } else setError(true);
+    } else 
+    console.log(result);
+    setError(result);
   };
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-100">
@@ -44,7 +61,7 @@ function Login() {
         type="password"
         placeholder="Enter password"
       />
-      {Error && <span className="text-red-800">Enter valid credintials</span>}
+      {Error && <span className="text-red-800">{Error}</span>}
       <button
         className="bg-white hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
         onClick={collectData}
@@ -56,6 +73,7 @@ function Login() {
         <Link to="/forgotPassword"> Forgot Password ?</Link>
       </button>
       <p  className="text-black">Dont have an Account ? <Link to='/signup'>Signup</Link></p>
+      <ToastContainer/>
     </div>
   );
 }

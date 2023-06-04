@@ -13,10 +13,10 @@ function Signup() {
 
   const collectData = async () => {
    if(! Email || ! Password || ! Cpassword || ! Phone){
-    setError(true)
+    setError('Please input all fields')
     return false
    }
-    let result = await fetch("https://futureik.onrender.com/register", {
+    let result = await fetch("http://localhost:3001/register", {
       method: "post",
       body: JSON.stringify({ Name, Email, Password, Cpassword, Phone }),
       headers: {
@@ -27,50 +27,50 @@ function Signup() {
     console.log(result);
     if (result.id) {
       navigate("/login");
-    } else setError(true);
+    } else setError(result);
   };
   return (
     <div className="w-screen h-screen flex flex-col justify-center items-center  bg-slate-100 ">
-      <h1 className="text-center text-blue-950 text-6xl  pb-2">
+      <h1 className="text-center text-blue-950 text-3xl  pb-2">
         Register
       </h1>
       <input
         value={Name}
         onChange={(e) => setName(e.target.value)}
-        className="w-1/6 rounded-full p-4 border-2 m-2"
+        className="lg:w-1/6 md:w-2/6 sm:3/6  rounded-full p-4 border-2 m-2"
         type="text"
         placeholder="Enter name"
       />
       <input
         value={Phone}
         onChange={(e) => setPhone(e.target.value)}
-        className="w-1/6 rounded-full p-4 border-2 m-2"
+        className="lg:w-1/6 md:w-2/6 sm:3/6 rounded-full p-4 border-2 m-2"
         type="number"
         placeholder="Enter phone number"
       />
 
       <input
-        className="p-4 border-2 m-2 rounded-full w-1/6"
+        className="lg:w-1/6 md:w-2/6 sm:3/6 p-4 border-2 m-2 rounded-full"
         value={Email}
         onChange={(e) => setEmail(e.target.value)}
         type="text"
         placeholder="Enter email"
       />
       <input
-        className="p-4 border-2 m-2 rounded-full w-1/6"
+        className="lg:w-1/6 md:w-2/6 sm:3/6 p-4 border-2 m-2 rounded-full "
         value={Password}
         onChange={(e) => setPassword(e.target.value)}
         type="password"
         placeholder="Enter password"
       />
       <input
-        className="p-4 border-2 m-2 rounded-full w-1/6"
+        className="p-4 border-2 m-2 rounded-full lg:w-1/6 md:w-2/6 sm:3/6"
         value={Cpassword}
         onChange={(e) => setCpassword(e.target.value)}
         type="password"
         placeholder="Confirm password"
       />
-      {Error && <span className="text-red-800">Enter valid credintials</span>}
+      {Error && <span className="text-red-800">{Error}</span>}
       <button
         className="bg-white text-black px-5 hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
         onClick={collectData}

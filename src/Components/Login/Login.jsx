@@ -51,6 +51,7 @@ function Login() {
       <button>
         <Link to="/forgotPassword"> Forgot Password ?</Link>
       </button>
+      <p>Dont have an Account ? <Link tp='/signup'>Signup</Link></p>
     </div>
   );
 }

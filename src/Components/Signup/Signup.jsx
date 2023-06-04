@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import {Link} from 'react-router-dom'
 function Signup() {
   const [Name, setName] = useState("");
   const [Email, setEmail] = useState("");
@@ -74,6 +74,7 @@ function Signup() {
       >
         Signup
       </button>
+      Already have an account ? <Link to='/login'>Login</Link>
     </div>
   );
 }

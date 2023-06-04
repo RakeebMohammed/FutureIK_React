@@ -62,7 +62,7 @@ function Password() {
       )}
       {!Update && (
         <input
-          className="w-2/5 p-4 border-2  m-2 rounded-full"
+          className="w-1/6 p-4 border-2  m-2 rounded-full"
           value={Email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
@@ -71,11 +71,11 @@ function Password() {
       )}
       {!Update && (
         <input
-          className="w-2/5 p-4 my-2 border-2 rounded-full"
+          className="w-1/6 p-4 my-2 border-2 rounded-full"
           value={Phone}
           onChange={(e) => setPhone(e.target.value)}
           type="number"
-          placeholder="Enter registered phone number"
+          placeholder="Enter registered number"
         />
       )}
       {Error && <span className="text-red-600">Enter valid credintials</span>}

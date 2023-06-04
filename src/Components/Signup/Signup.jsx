@@ -16,7 +16,7 @@ function Signup() {
     setError('Please input all fields')
     return false
    }
-    let result = await fetch("https://futureik-r.onrender.com/register", {
+    let result = await fetch("https://futureik.onrender.com/register", {
       method: "post",
       body: JSON.stringify({ Name, Email, Password, Cpassword, Phone }),
       headers: {

@@ -13,7 +13,7 @@ function Password() {
   const navigate = useNavigate();
 
   const collectData = async () => {
-    let result = await fetch("https://futureik-r.onrender.com/forgotPassword", {
+    let result = await fetch("https://futureik.onrender.com/forgotPassword", {
       method: "post",
       body: JSON.stringify({ Email, Phone }),
       headers: {
@@ -31,7 +31,7 @@ console.log(result);
   };
   const UpdatePass = async () => {
     let Id = localStorage.getItem("id");
-    let result = await fetch("https://futureik-r.onrender.com/updatePassword", {
+    let result = await fetch("https://futureik.onrender.com/updatePassword", {
       method: "put",
       body: JSON.stringify({ Password, Cpassword, Id }),
       headers: {

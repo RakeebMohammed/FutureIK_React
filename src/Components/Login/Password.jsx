@@ -58,7 +58,7 @@ function Password() {
       )}
       {!Update && (
         <input
-          className="w-1/6 p-4 border-2  m-2 rounded-full"
+          className="w-2/5 p-4 border-2  m-2 rounded-full"
           value={Email}
           onChange={(e) => setEmail(e.target.value)}
           type="text"
@@ -67,7 +67,7 @@ function Password() {
       )}
       {!Update && (
         <input
-          className="w-1/6 p-4 my-2 border-2 rounded-full"
+          className="w-2/5 p-4 my-2 border-2 rounded-full"
           value={Phone}
           onChange={(e) => setPhone(e.target.value)}
           type="number"
@@ -93,7 +93,7 @@ function Password() {
           value={Password}
           onChange={(e) => setPassword(e.target.value)}
           type="password"
-          placeholder="Enter new password"
+          placeholder="Enter a new password"
         />
       )}
       {Update && (

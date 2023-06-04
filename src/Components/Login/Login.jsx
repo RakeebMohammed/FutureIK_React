@@ -31,14 +31,14 @@ function Login() {
     <div className="w-screen h-screen flex flex-col justify-center items-center bg-slate-100">
       <h3 className="text-3xl  text-blue-950 p-2 text-center">Login</h3>
       <input
-        className="p-4 border-2 m-2"
+        className="rounded-full p-4 border-2 m-2"
         value={Email}
         onChange={(e) => setEmail(e.target.value)}
         type="text"
         placeholder="Enter email"
       />
       <input
-        className="p-4  border-2"
+        className="rounded-full p-4  border-2"
         value={Password}
         onChange={(e) => setPassword(e.target.value)}
         type="password"

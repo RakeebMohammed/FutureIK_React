@@ -85,7 +85,7 @@ function Password() {
         </button>
       )}
       {Update && (
-        <h3 className="text-6xl  text-black p-2 text-center">Reset Password </h3>
+        <h3 className="text-3xl  text-black p-2 text-center">Reset Password </h3>
       )}
       {Update && (
         <input

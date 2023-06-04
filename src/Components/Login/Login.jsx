@@ -7,6 +7,10 @@ function Login() {
   const [Error, setError] = useState(false);
   const navigate = useNavigate();
   const collectData = async () => {
+   if(!Email || !Password){
+    setError(true)
+    return false
+   }
     let result = await fetch("https://futureik.onrender.com/login", {
       method: "post",
       body: JSON.stringify({ Email, Password }),
@@ -40,7 +44,7 @@ function Login() {
         type="password"
         placeholder="Enter password"
       />
-      {Error && <span>Enter valid credintials</span>}
+      {Error && <span className="text-red-800">Enter valid credintials</span>}
       <button
         className="bg-white hover:bg-blue-400 hover:text-white border-2 rounded-full p-2 m-2"
         onClick={collectData}

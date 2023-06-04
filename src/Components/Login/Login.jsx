@@ -26,7 +26,7 @@ function Login() {
     setError('Please input all fields')
     return false
    }
-    let result = await fetch("http://localhost:3001/login", {
+    let result = await fetch("https://futureik-r.onrender.com/login", {
       method: "post",
       body: JSON.stringify({ Email, Password }),
       headers: {
